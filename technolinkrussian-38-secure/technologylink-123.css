@@ -111,10 +111,10 @@ body {
            /* Style the container */
         .image-container {
             width: 600px; /* Adjust the width as needed */
-            height: 100%; /* Set the desired height */
+            height: 400px; /* Set the desired height */
             overflow: auto; /* Add scroll bar when content exceeds container height */
-            background-color: transparent; /* White background */
-            border: 2px solid yellow; /* Optional border for visual clarity */
+            background-color: white; /* White background */
+            border: 2px solid blue; /* Optional border for visual clarity */
             padding: 3px; /* Add some padding for readability */
         }
         /* Style the text inside the container */
@@ -132,10 +132,10 @@ body {
 
 
             width: 600px; /* Adjust the width as needed */
-            height: 100%; /* Set the desired height */
+            height: 400px; /* Set the desired height */
             overflow: auto; /* Add scroll bar when content exceeds container height */
-            background-color: #0099FF; /* White background */
-            border: 1px solid yellow; /* Optional border for visual clarity */
+            background-color: white; /* White background */
+            border: 1px solid blue; /* Optional border for visual clarity */
             padding: 3px; /* Add some padding for readability */
 
         }
@@ -150,7 +150,7 @@ body {
 
         .text {
 background: linear-gradient(
-to right,rgba(0, 168, 253), yellow 30%, springgreen);
+to right,rgba(0, 168, 253), black 30%, skyblue);
 background-size: 200% auto;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -162,7 +162,62 @@ animation: gradient 3s linear infinite; }
 }
 
 
+    .flip-box {
+            background-color: white;
+            width: 60px;
+            height: 60px;
+            border: 0px solid blue;
+            perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        }
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-box-front, .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .flip-box-front {
+            background-color: #00a0ff;
+            color: black;
+        }
+        .flip-box-back {
+            background-color: yellow;
 
+            color: black;
+            transform: rotateY(180deg);
+        }
+
+
+
+
+          	.img-container {
+width: 400px;
+height: 200px;
+overflow: hidden;
+}
+.img-container > img {
+width: 100%;
+height: 100%;
+filter: grayscale(1);
+transition:scale 750ms ease-out,
+
+filter 250ms ease-in-out;
+}
+.img-container:hover > img {
+scale: 1.15;
+filter: grayscale(0);
+}
 
 
 
